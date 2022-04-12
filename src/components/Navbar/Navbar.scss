@@ -1,0 +1,39 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.nav {
+ @include flex(flex, row, wrap, center, center);
+ background-color: transparent;
+ max-width: 95%;
+ margin: 0 auto;
+ z-index: 1;
+ position: relative;
+
+&__col-left {
+  width: 20%;
+  text-align: left;
+}
+
+&__logo {
+  width: 175px;
+}
+
+&__col-right {
+  width: 80%;
+}
+
+&__ul {
+  text-align: right;
+}
+
+&__login {
+  background-color: $primary-color;
+  padding: 8px 18px !important;
+  text-decoration: none;
+  border-radius: 5px;
+  color: $white-color;
+  padding: 0px 15px;
+  font-size: 1.6rem;
+}
+
+}

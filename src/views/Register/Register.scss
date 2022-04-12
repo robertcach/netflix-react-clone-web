@@ -1,0 +1,40 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.register-form {
+  @include flex(flex, column, nowrap, center, stretch);
+
+  &__columns {
+    @include flex(flex, row, nowrap, center, center)
+  }
+
+  &__left-col {
+    width: 99.5%;
+    margin-right: 0.5%;
+  }
+
+  &__right-col {
+    width: 99.5%;
+    margin-left: 0.5%;
+  }
+
+  &__full-col {
+    width: 100%;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: $primary-color;
+    border: none;
+    color: $white-color;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 2.6rem;
+  }
+
+  &__icon {
+    font-size: 2rem;
+    margin-left: 7px;
+  }
+}

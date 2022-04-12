@@ -1,0 +1,43 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+
+.login {
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('../../assets/images/home-background.jpg');
+  height: 100vh;
+  background-size: cover;
+  background-position: 50% 50%;
+  @include less-top();
+
+  &__content {
+    @include flex(flex, row, wrap, center, center);
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 35%;
+    margin: 0 auto;
+    padding: 75px 50px;
+    min-height: 40vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__suscribe {
+    font-size: 1.6rem;
+    color: #737373;
+    font-weight: 400;
+  }
+
+  &__back-home {
+    color: $white-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

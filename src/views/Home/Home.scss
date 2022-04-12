@@ -1,0 +1,24 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.first-banner {
+  background:linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0.4) 60%,rgba(0,0,0,.9) 100%), url('../../assets/images/home-background.jpg');
+  border-bottom: solid 8px $grey-color;
+  background-size: cover;
+  top: -120px;
+  position: relative;
+  z-index: 0;
+}
+
+.faqs {
+  padding: 75px 0px;
+
+  &__title {
+    font-size: 5rem;
+    margin-bottom: 30px;
+  }
+
+  &__info {
+    padding: 50px 0px;
+  }
+}

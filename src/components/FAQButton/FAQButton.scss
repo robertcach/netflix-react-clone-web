@@ -1,0 +1,45 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.faq {
+  margin: 5px auto;
+  width: 75%;
+
+
+  &__btn {
+    @include flex(flex, row, wrap, space-between, center);
+    background-color: $grey-color;
+    border: none;
+    padding: 20px 30px;
+    width: 100%;
+    text-align: left;
+    color: $white-color;
+    font-size: 2.6rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  &__title {
+
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    font-weight: 100;
+
+    &:hover {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__content {
+    text-align: left;
+    font-size: 2.4rem;
+    font-weight: 400;
+    width: 100%;
+    background-color: $grey-color;
+    padding: 20px 30px;
+    margin-top: 2px;
+  }
+}
+

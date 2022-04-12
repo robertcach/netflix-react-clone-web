@@ -1,0 +1,35 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.header {
+  @include flex(flex, row, wrap, center, center);
+  padding: 170px 0px;
+  background-size: cover;
+  width: 100%;
+  background-position: 50% 50%;
+
+  &__title {
+    color: $white-color;
+    font-size: 5rem;
+    width: 80%;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    color: $white-color;
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    color: $white-color;
+    font-size: 1.9rem;
+    font-weight: 500;
+  }
+
+  &__form {
+    width: 60%;
+    margin-top: 25px;
+  }
+}

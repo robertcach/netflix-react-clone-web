@@ -1,0 +1,39 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.banner {
+  @include flex(flex, column, wrap, center, center);
+  @include border();
+  min-height: 500px;
+
+  &:nth-child(even) &__wrapper {
+    flex-direction: row-reverse;
+  }
+  
+  &__wrapper {
+    @include flex(flex, row, wrap, center, center);
+  }
+
+  &__col-left {
+    width: 50%;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+  }
+
+  &__subtitle {
+    font-size: 2.6rem;
+  }
+
+  &__col-right {
+    width: 50%;
+  }
+
+  &__img {
+    width: 80%;
+    height: auto;
+  }
+}

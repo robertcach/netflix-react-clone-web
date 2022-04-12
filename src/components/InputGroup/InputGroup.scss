@@ -1,0 +1,15 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+
+.form-input {
+  width: 100%;
+
+  &__input {
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 5px;
+  }
+}
