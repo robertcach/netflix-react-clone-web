@@ -1,28 +1,32 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { createMovie } from '../../../services/MovieService';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import InputGroup from '../../../components/InputGroup/InputGroup';
 
 const NewMovie = () => {
-  const { user, getUser } = useAuthContext();
-  const { register, handleSubmit} = useForm();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState(false)
   const navigate = useNavigate();
+  const { user, getUser } = useAuthContext();
+  const { register, handleSubmit } = useForm();
+
 
   const onSubmit = (data) => {
     const { title, description } = data
 
     if (!title || !description) {
-      console.log("Wrong data")
+      setErrors(true)
+    } else {
+      createMovie({...data, user})
+        .then((movie) => {
+          getUser()
+          navigate("/profile")
+        })
+        .catch(err => setErrors(err?.response?.data?.errors))
+        .finally(() => setIsSubmitting(false))
     }
-
-    createMovie({...data, user})
-      .then((movie) => {
-        getUser()
-        navigate("/profile")
-      })
-      .catch(err => console.log(err))
   }
 
   return (
@@ -30,6 +34,7 @@ const NewMovie = () => {
       <h1>Create your movie</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
+        {errors && <div>Check all fields!</div>}
         <InputGroup
           label="Título"
           id="title"

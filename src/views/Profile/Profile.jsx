@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 import './Profile.scss';
 
@@ -6,13 +7,13 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>Profile</h1>
-{/*       <p>{JSON.stringify(user)}</p> */}
+      <h1>{user.name} Profile</h1>
+
       <ul>
         {user.movies.map(movie => {
           return (
-            <li key={movie._id} style={{marginBottom: '50px'}}>
-              <h4>{movie.title}</h4>
+            <li key={movie.id} style={{marginBottom: '50px'}}>
+              <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
               <p>{movie.description}</p>
             </li>
           )
