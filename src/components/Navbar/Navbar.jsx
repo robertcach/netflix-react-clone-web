@@ -10,9 +10,10 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <div className="nav__col-left">
-        <Link to="/">
+        {!user && <Link to="/">
           <img src={logo} className="nav__logo" alt="netflix-logo" />
-        </Link>
+        </Link>}
+        
         
       </div>
       <div className="nav__col-right">

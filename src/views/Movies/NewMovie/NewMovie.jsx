@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { createMovie } from '../../../services/MovieService';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import InputGroup from '../../../components/InputGroup/InputGroup';
