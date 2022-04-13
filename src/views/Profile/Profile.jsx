@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
+import { deleteMovie } from '../../services/MovieService';
 import './Profile.scss';
 
 const Profile = () => {
-  const { user } = useAuthContext();
+  const { user, getUser } = useAuthContext();
+
+  const handleDelete = (id) => {
+    deleteMovie(id)
+      .then(() => {
+        getUser();
+      })
+  }
 
   return (
     <div>
@@ -15,6 +23,7 @@ const Profile = () => {
             <li key={movie.id} style={{marginBottom: '50px'}}>
               <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
               <p>{movie.description}</p>
+              <button onClick={() => handleDelete(movie.id)}>Delete movie</button>
             </li>
           )
         })}
