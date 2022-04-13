@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 import { deleteMovie } from '../../services/MovieService';
 import { moviesListFromAPI } from '../../services/MoviesFromAPI/MovieAPIService';
+import MovieCard from '../../components/MovieCard/MovieCard';
 import './Profile.scss';
+import UserLoginBanner from '../../components/UserLogginBanner/UserLoginBanner';
 
 const Profile = () => {
   const [moviesAPI, setMoviesAPI] = useState([])
@@ -24,9 +26,9 @@ const Profile = () => {
 
   return (
     <div>
-      <h1>{user.name} Profile</h1>
-
-      <ul>
+      <UserLoginBanner />
+{/*       <h1>{user.name} Profile</h1> */}
+{/*       <ul>
         {user.movies.map(movie => {
           return (
             <li key={movie.id} style={{marginBottom: '50px'}}>
@@ -36,17 +38,18 @@ const Profile = () => {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
 
-      {moviesAPI && moviesAPI.map(movie => {
-        return (
-          <div key={movie.id}>
-            <h3>{movie.title}</h3>
-            <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
-            <h3>{movie.overview}</h3>
-          </div>
-        )
-      })}
+      <div className="cards">
+        <h2 className="cards__title">Tendencias ahora</h2>
+        <div className="cards__single">
+          {moviesAPI && moviesAPI.map(movie => {
+            return (
+              <MovieCard key={movie.id} image={movie.poster_path} title={movie.title} />
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }

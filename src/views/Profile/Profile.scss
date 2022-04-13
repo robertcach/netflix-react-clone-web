@@ -1,0 +1,22 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.cards {
+  text-align: left;
+  padding-left: 4%;
+  margin-top: -8%;
+
+  &__single {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+}

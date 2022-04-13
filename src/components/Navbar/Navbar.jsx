@@ -24,9 +24,9 @@ const Navbar = () => {
            </>
           ) : (
             <>
-              <Link to="/profile" className="nav__login">Perfil</Link>
-              <Link to="/favourites" className="nav__login">Favoritos</Link>
-              <button onClick={logout}>Cerrar sesión</button>
+              <Link to="/profile" className="nav__text">Perfil</Link>
+              <Link to="/favourites" className="nav__text">Favoritos</Link>
+              <button onClick={logout} className="nav__logout">Cerrar sesión</button>
             </>
           )
          }

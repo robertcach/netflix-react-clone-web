@@ -1,0 +1,14 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.card {
+  width: 19%;
+  border-radius: 4px;
+  margin-right: 1%;
+
+
+  &__img {
+    object-fit: contain;
+    max-height: 240px;
+  }
+}

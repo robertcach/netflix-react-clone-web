@@ -2,38 +2,59 @@
 @import '/src/assets/stylesheets/variables.scss';
 
 .nav {
- @include flex(flex, row, wrap, center, center);
- background-color: transparent;
- max-width: 95%;
- margin: 0 auto;
- z-index: 1;
- position: relative;
+  @include flex(flex, row, wrap, center, center);
+  background-color: transparent;
+  max-width: 95%;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+  min-height: 100px;
 
-&__col-left {
-  width: 20%;
-  text-align: left;
-}
+  &__col-left {
+    width: 20%;
+    text-align: left;
+  }
 
-&__logo {
-  width: 175px;
-}
+  &__logo {
+    width: 175px;
+  }
 
-&__col-right {
-  width: 80%;
-}
+  &__col-right {
+    width: 80%;
+  }
 
-&__ul {
-  text-align: right;
-}
+  &__ul {
+    text-align: right;
+  }
 
-&__login {
-  background-color: $primary-color;
-  padding: 8px 18px !important;
-  text-decoration: none;
-  border-radius: 5px;
-  color: $white-color;
-  padding: 0px 15px;
-  font-size: 1.6rem;
-}
 
+  &__login {
+    background-color: $primary-color;
+    padding: 8px 18px !important;
+    text-decoration: none;
+    border-radius: 5px;
+    color: $white-color;
+    padding: 0px 15px;
+    font-size: 1.6rem;
+  }
+
+  &__text {
+    background-color: none;
+    padding: none;
+    color: $white-color;
+    padding: 8px 18px !important;
+    font-size: 1.6rem;
+    text-decoration: none;
+  }
+
+  &__logout {
+    background-color: transparent !important;
+    border: none;
+    padding: none;
+    color: $white-color;
+    padding: 8px 18px !important;
+    font-size: 1.6rem;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
