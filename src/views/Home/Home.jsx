@@ -1,9 +1,9 @@
 import Banner from '../../components/Banner/Banner';
 import FAQButton from '../../components/FAQButton/FAQButton';
 import Header from '../../components/Header/Header';
-import Navbar from '../../components/Navbar/Navbar';
 import banners from '../../data/banners.json';
 import faqs from '../../data/faq.json'
+import Register from '../Register/Register';
 import './Home.scss';
 
 const Home = () => {
@@ -22,16 +22,23 @@ const Home = () => {
         )}
       </div>
 
-      <div className="faqs wrapper">
-        <h2 className="faqs__title">Preguntas frecuentes</h2>
-        {faqs.map(faq => {
-          return (
-            <FAQButton key={faq.id} {...faq} />
-          )
-        }
-        )}
-        <p className="faqs__info">¿Quieres ver algo ya? Escribe tu correo para crear una suscripción a Netflix o reactivarla.</p>
+      <div className="faqs">
+        <div className="wrapper">
+          <h2 className="faqs__title">Frequently Asked Questions</h2>
+          {faqs.map(faq => {
+            return (
+              <FAQButton key={faq.id} {...faq} />
+            )
+          }
+          )}
+          <p className="faqs__info">Ready to watch? Enter your email to create or restart your membership.</p>
+
+          <div className="faqs__register">
+            <Register />    
+          </div>
+        </div>
       </div>
+
         
     </div>
   )

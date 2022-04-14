@@ -5,11 +5,12 @@
   background:linear-gradient(to top,rgba(0,0,0,1) 0,rgba(0,0,0,0.4) 60%,rgba(0,0,0,.9) 100%), url("https://image.tmdb.org/t/p/original//1g0dhYtq4irTY1GPXvft6k4YLjm.jpg");
   @include flex(flex, column, wrap, center, flex-start);
   width: 100%;
-  height: 60vh;
+  height: 85vh;
   background-size: cover;
   background-position: 50% 20%;
   position: relative;
   top: -120px;
+  margin-bottom: -8%;
 
   &__info {
     width: 50%;

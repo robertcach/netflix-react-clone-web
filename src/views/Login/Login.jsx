@@ -49,7 +49,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login__content">
-        <h1>Iniciar Sesión</h1>
+        <h1>Sign In</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="login__form">
           <InputGroup 
@@ -58,7 +58,7 @@ const Login = () => {
             register={register}
             error={errors.email?.message}
             type="email"
-            placeholder="Correo electrónico"
+            placeholder="Email"
           />
 
           <InputGroup 
@@ -67,16 +67,16 @@ const Login = () => {
             register={register}
             error={errors.password?.message}
             type="password"
-            placeholder="Contraseña"
+            placeholder="Password"
           />
 
-          <button className="register-form__button">Empezar
+          <button className="register-form__button">Sign In
             <i className="fa fa-arrow-right register-form__icon" aria-hidden="true"></i>
           </button>
         </form>
 
-        <p className="login__suscribe">¿Todavía sin Netflix?
-          <a href="/" className="login__back-home"> Suscríbete ya</a>.
+        <p className="login__suscribe">New to Netflix? 
+          <a href="/" className="login__back-home">Sign up now.</a>
         </p>
       </div>
     </div>

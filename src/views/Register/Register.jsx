@@ -46,25 +46,23 @@ const Register = () => {
         <div className="register-form__columns">
           <div className="register-form__left-col">
               <InputGroup
-                className="" 
                 label="Email"
                 id= "email"
                 register={register}
                 error={backErrors?.email || errors.email?.message}
                 type= "email"
-                placeholder="Correo electrónico"
+                placeholder="Email"
               />
             </div>
 
             <div className="register-form__right-col">
               <InputGroup
-                className="" 
                 label="Name"
                 id= "name"
                 register={register}
                 error={backErrors?.name || errors.name?.message}
                 type= "text"
-                placeholder="Nombre"
+                placeholder="Name"
               />
             </div>
         </div>
@@ -72,18 +70,17 @@ const Register = () => {
 
         <div className="register-form__full-col">
           <InputGroup
-          className="" 
             label="Password"
             id= "password"
             register={register}
             error={backErrors?.password || errors.password?.message}
             type= "password"
-            placeholder="Contraseña"
+            placeholder="Password"
           />
 
         </div>
 
-        <button className="register-form__button">Empezar
+        <button className="register-form__button">Get Started
           <i className="fa fa-arrow-right register-form__icon" aria-hidden="true"></i>
         </button>
       </form>

@@ -2,7 +2,7 @@
 @import '/src/assets/stylesheets/variables.scss';
 
 .nav {
-  @include flex(flex, row, wrap, center, center);
+  @include flex(flex, row, wrap, space-between, center);
   background-color: transparent;
   max-width: 95%;
   margin: 0 auto;
@@ -38,12 +38,24 @@
     font-size: 1.6rem;
   }
 
+  &__menu {
+    @include flex(flex, row, wrap, space-between, flex-start);
+  }
+
+  &__login-left {
+
+  }
+
+  &__login-right {
+
+  }
+
   &__text {
     background-color: none;
     padding: none;
     color: $white-color;
-    padding: 8px 18px !important;
-    font-size: 1.6rem;
+    padding: 0px 10px !important;
+    font-size: 1.4rem;
     text-decoration: none;
   }
 
@@ -52,8 +64,8 @@
     border: none;
     padding: none;
     color: $white-color;
-    padding: 8px 18px !important;
-    font-size: 1.6rem;
+    padding: 8px 15px !important;
+    font-size: 1.4rem;
     text-decoration: underline;
     cursor: pointer;
   }

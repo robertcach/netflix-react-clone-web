@@ -10,9 +10,15 @@ const Navbar = () => {
   return (
     <nav className="nav">
       <div className="nav__col-left">
-        {!user && <Link to="/">
-          <img src={logo} className="nav__logo" alt="netflix-logo" />
-        </Link>}
+        {!user ? (
+          <Link to="/">
+            <img src={logo} className="nav__logo" alt="netflix-logo" />
+          </Link>
+        ):(
+          <Link to="/profile">
+            <img src={logo} className="nav__logo" alt="netflix-logo" />
+          </Link>
+        )}
         
         
       </div>
@@ -20,14 +26,23 @@ const Navbar = () => {
         <ul className="nav__ul">
          {!user ? (
            <>
-              <Link to="/login" className="nav__login">Iniciar sesión</Link>
+              <Link to="/login" className="nav__login">Sign In</Link>
            </>
           ) : (
-            <>
-              <Link to="/profile" className="nav__text">Perfil</Link>
-              <Link to="/favourites" className="nav__text">Favoritos</Link>
-              <button onClick={logout} className="nav__logout">Cerrar sesión</button>
-            </>
+            <div className="nav__menu">
+              <div className="nav__login-left">
+                <Link to="/movie/new" className="nav__text">Create Movie</Link>
+                <Link to="/series" className="nav__text">Series TV</Link>
+                <Link to="/movies" className="nav__text">Movies</Link>
+              </div>
+
+              <div className="nav__login-right">
+{/*                 <Link to="/profile" className="nav__text">Perfil</Link> */}
+                <Link to="/favourites" className="nav__text">Favourites</Link>
+                <button onClick={logout} className="nav__logout">Logout</button>
+              </div>
+              
+            </div>
           )
          }
         </ul>

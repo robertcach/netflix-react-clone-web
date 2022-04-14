@@ -50,6 +50,32 @@ const Profile = () => {
           })}
         </div>
       </div>
+
+      <div className="cards">
+        <h2 className="cards__title">Only in Netflix</h2>
+        <div className="cards__single">
+          {moviesAPI && moviesAPI.map(movie => {
+            return (
+              <MovieCard key={movie.id} image={movie.poster_path} title={movie.title} />
+            )
+          })}
+        </div>
+      </div>
+
+      <div className="cards">
+        <h2 className="cards__title">Series TV</h2>
+        <div className="cards__single">
+          {moviesAPI && moviesAPI.map(movie => {
+            return (
+              <MovieCard key={movie.id} image={movie.poster_path} title={movie.title} />
+            )
+          })}
+        </div>
+      </div>
+
+
+
+
     </div>
   )
 }

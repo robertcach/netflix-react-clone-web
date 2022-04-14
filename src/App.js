@@ -7,9 +7,10 @@ import Home from './views/Home/Home';
 import { useAuthContext } from './contexts/AuthContext';
 import ProtectedRoute from './guards/ProtectedRoute'
 import Navbar from './components/Navbar/Navbar';
-import './App.scss';
+import Footer from './components/Footer/Footer';
 import MovieDetail from './views/Movies/MovieDetail/MovieDetail';
 import EditMovie from './views/Movies/EditMovie/EditMovie';
+import './App.scss';
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -34,7 +35,7 @@ function App() {
           </Routes>
         )
       }
-      
+      <Footer />
     </div>
   );
 }

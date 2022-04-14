@@ -1,0 +1,55 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.footer {
+  padding: 75px 0px;
+
+  &__call {
+    width: 85%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &__number {
+    color: #757575;
+    font-size: 1.6rem;
+    padding: 7px;
+  }
+
+  &__cols {
+    @include flex(flex, row, wrap, space-between, flex-start);
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  &__col {
+
+  }
+
+  &__ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  &__li {
+    color: #757575;
+    font-size: 1.3rem;
+    padding: 7px;
+  }
+
+
+  &__last{
+    width: 85%;
+    padding-top: 30px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  &__country {
+    color: #757575;
+    font-size: 1.3rem;
+    padding: 7px;
+  }
+}

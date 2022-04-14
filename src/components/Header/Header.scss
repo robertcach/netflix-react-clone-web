@@ -2,7 +2,7 @@
 @import '/src/assets/stylesheets/variables.scss';
 
 .header {
-  @include flex(flex, row, wrap, center, center);
+  @include flex(flex, column, wrap, center, center);
   padding: 170px 0px;
   background-size: cover;
   width: 100%;

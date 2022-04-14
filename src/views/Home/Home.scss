@@ -12,6 +12,7 @@
 
 .faqs {
   padding: 75px 0px;
+  border-bottom: solid 8px $grey-color;
 
   &__title {
     font-size: 5rem;
@@ -19,6 +20,13 @@
   }
 
   &__info {
-    padding: 50px 0px;
+    padding-top: 50px;
+    padding-bottom: 15px;
+  }
+
+  &__register {
+    width: 70%;
+    margin: 0 auto;
   }
 }
+

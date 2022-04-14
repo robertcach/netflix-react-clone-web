@@ -4,10 +4,11 @@
 
 .login {
   background:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('../../assets/images/home-background.jpg');
-  height: 100vh;
+  height: 80vh;
   background-size: cover;
   background-position: 50% 50%;
   @include less-top();
+  margin-bottom: -120px;
 
   &__content {
     @include flex(flex, row, wrap, center, center);
@@ -35,6 +36,7 @@
   &__back-home {
     color: $white-color;
     text-decoration: none;
+    margin-left: 5px;
 
     &:hover {
       text-decoration: underline;
