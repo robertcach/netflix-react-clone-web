@@ -11,15 +11,21 @@ const SerieDetail = () => {
   
   useEffect(() => {
     serieDetailFromAPI(id)
-      .then(serie => console.log(serie))
+      .then(serieID => {
+        setSerie(serieID)
+        console.log(serieID)
+      })
+      
+      console.log('hola')
   })
 
 
   return (
     <div>
-      {serie && console.log(serie.status_message)}
+      <h1>Serie detail:</h1>
+      {serie && serie.name}
     </div>
   )
 }
 
-export default SerieDetail
+export default SerieDetail;

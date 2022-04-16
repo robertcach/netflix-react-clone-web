@@ -9,9 +9,9 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import MovieDetail from './views/Movies/MovieDetail/MovieDetail';
 import EditMovie from './views/Movies/EditMovie/EditMovie';
-import './App.scss';
 import Series from './views/Series/Series';
 import SerieDetail from './views/Series/SerieDetail/SerieDetail';
+import './App.scss';
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -31,8 +31,8 @@ function App() {
               <Route path="/series" element={<Series />} />
               <Route path="/tv/:id" element={<SerieDetail />} />
               <Route path="/movie/new" element={<NewMovie /> } />
-              <Route path="/movie/:id/edit" element={<EditMovie />} />
               <Route path="/movie/:id" element={<MovieDetail />} />
+              <Route path="/movie/:id/edit" element={<EditMovie />} />
             </Route>
           </Routes>
         )

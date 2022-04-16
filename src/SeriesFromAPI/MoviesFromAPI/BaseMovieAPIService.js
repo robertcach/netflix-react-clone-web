@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const loadMoviesFromApi = axios.create({
   baseURL: "https://api.themoviedb.org/3",
 })

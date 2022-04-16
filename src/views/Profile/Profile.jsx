@@ -52,7 +52,7 @@ const Profile = () => {
     <div>
       {randomMovie && <UserLoginBanner randomMovie={randomMovie} />}
 {/*       <h1>{user.name} Profile</h1> */}
-      <ul>
+{/*       <ul>
         {user.movies.map(movie => {
           return (
             <li key={movie.id} style={{marginBottom: '50px'}}>
@@ -62,7 +62,7 @@ const Profile = () => {
             </li>
           )
         })}
-      </ul>
+      </ul> */}
 
       <div className="cards">
         <h2 className="cards__title">Trending now</h2>
