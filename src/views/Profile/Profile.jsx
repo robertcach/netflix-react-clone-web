@@ -12,12 +12,13 @@ const Profile = () => {
   const [netflixMovies, setTNetflixMovies] = useState([])
   const [topRatedMovies, setTopRatedMovies] = useState([])
   const [actionMovies, setActionMovies] = useState([])
+  const [randomMovie, setRandomMovie] = useState([])
   const { user, getUser } = useAuthContext();
 
   useEffect(() => {
     trendingMoviesFromAPI()
       .then(response => setTrendingMovies(response))
-  },[])
+  }, [])
 
   useEffect(() => {
     netflixOriginalsMoviesFromAPI()
@@ -34,6 +35,10 @@ const Profile = () => {
       .then(response => setActionMovies(response))
   },[])
 
+  useEffect(() => {
+    const randomMovieToBanner = trendingMovies[Math.floor(Math.random() * trendingMovies.length)]
+    setRandomMovie(randomMovieToBanner)
+  },[trendingMovies])
 
   const handleDelete = (id) => {
     deleteMovie(id)
@@ -42,9 +47,11 @@ const Profile = () => {
       })
   }
 
+
+
   return (
     <div>
-      <UserLoginBanner />
+      {randomMovie && <UserLoginBanner randomMovie={randomMovie} />}
 {/*       <h1>{user.name} Profile</h1> */}
 {/*       <ul>
         {user.movies.map(movie => {
