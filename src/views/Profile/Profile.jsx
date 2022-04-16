@@ -2,20 +2,38 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
 import { deleteMovie } from '../../services/MovieService';
-import { moviesListFromAPI } from '../../services/MoviesFromAPI/MovieAPIService';
+import { trendingMoviesFromAPI, netflixOriginalsMoviesFromAPI, topRatedMoviesFromAPI, actionMoviesFromAPI } from '../../services/MoviesFromAPI/MovieAPIService';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import './Profile.scss';
 import UserLoginBanner from '../../components/UserLogginBanner/UserLoginBanner';
 
 const Profile = () => {
-  const [moviesAPI, setMoviesAPI] = useState([])
+  const [trendingMovies, setTrendingMovies] = useState([])
+  const [netflixMovies, setTNetflixMovies] = useState([])
+  const [topRatedMovies, setTopRatedMovies] = useState([])
+  const [actionMovies, setActionMovies] = useState([])
   const { user, getUser } = useAuthContext();
 
   useEffect(() => {
-    moviesListFromAPI()
-      .then(response => setMoviesAPI(response))
-      console.log(moviesAPI)
+    trendingMoviesFromAPI()
+      .then(response => setTrendingMovies(response))
   },[])
+
+  useEffect(() => {
+    netflixOriginalsMoviesFromAPI()
+      .then(response => setTNetflixMovies(response))
+  },[])
+
+  useEffect(() => {
+    topRatedMoviesFromAPI()
+      .then(response => setTopRatedMovies(response))
+  },[])
+
+  useEffect(() => {
+    actionMoviesFromAPI()
+      .then(response => setActionMovies(response))
+  },[])
+
 
   const handleDelete = (id) => {
     deleteMovie(id)
@@ -41,9 +59,9 @@ const Profile = () => {
       </ul> */}
 
       <div className="cards">
-        <h2 className="cards__title">Tendencias ahora</h2>
+        <h2 className="cards__title">Trending now</h2>
         <div className="cards__single">
-          {moviesAPI && moviesAPI.map(movie => {
+          {trendingMovies && trendingMovies.map(movie => {
             return (
               <MovieCard key={movie.id} image={movie.poster_path} title={movie.title} />
             )
@@ -54,7 +72,7 @@ const Profile = () => {
       <div className="cards">
         <h2 className="cards__title">Only in Netflix</h2>
         <div className="cards__single">
-          {moviesAPI && moviesAPI.map(movie => {
+          {netflixMovies && netflixMovies.map(movie => {
             return (
               <MovieCard key={movie.id} image={movie.poster_path} title={movie.title} />
             )
@@ -63,9 +81,9 @@ const Profile = () => {
       </div>
 
       <div className="cards">
-        <h2 className="cards__title">Series TV</h2>
+        <h2 className="cards__title">Top Rated</h2>
         <div className="cards__single">
-          {moviesAPI && moviesAPI.map(movie => {
+          {topRatedMovies && topRatedMovies.map(movie => {
             return (
               <MovieCard key={movie.id} image={movie.poster_path} title={movie.title} />
             )
@@ -73,8 +91,16 @@ const Profile = () => {
         </div>
       </div>
 
-
-
+      <div className="cards">
+        <h2 className="cards__title">Action movies</h2>
+        <div className="cards__single">
+          {actionMovies && actionMovies.map(movie => {
+            return (
+              <MovieCard key={movie.id} image={movie.poster_path} title={movie.title} />
+            )
+          })}
+        </div>
+      </div>
 
     </div>
   )

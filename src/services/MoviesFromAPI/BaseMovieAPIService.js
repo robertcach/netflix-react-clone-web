@@ -1,8 +1,6 @@
 import axios from 'axios';
 import createHttp from '../BaseService';
 
-const http = createHttp(true)
-
 const loadMoviesFromApi = axios.create({
   baseURL: "https://api.themoviedb.org/3",
 })

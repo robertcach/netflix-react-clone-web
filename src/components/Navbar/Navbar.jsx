@@ -37,7 +37,7 @@ const Navbar = () => {
               </div>
 
               <div className="nav__login-right">
-{/*                 <Link to="/profile" className="nav__text">Perfil</Link> */}
+                {/* <Link to="/profile" className="nav__text">Perfil</Link> */}
                 <Link to="/favourites" className="nav__text">Favourites</Link>
                 <button onClick={logout} className="nav__logout">Logout</button>
               </div>
