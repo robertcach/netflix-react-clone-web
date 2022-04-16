@@ -4,7 +4,7 @@
 .banner-login {
   @include flex(flex, column, wrap, center, flex-start);
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   background-size: cover;
   background-position: 50% 20%;
   position: relative;
@@ -12,7 +12,7 @@
   margin-bottom: -8%;
 
   &__info {
-    width: 50%;
+    width: 60%;
     padding: 0 4%;
     text-align: left;
   }

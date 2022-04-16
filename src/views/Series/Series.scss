@@ -1,0 +1,9 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.tv-cards {
+
+  &__single {
+    @include flex(flex, row, wrap, space-evenly, flex-start);
+  }
+}

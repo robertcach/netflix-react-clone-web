@@ -4,8 +4,8 @@ import { useAuthContext } from '../../contexts/AuthContext';
 import { deleteMovie } from '../../services/MovieService';
 import { trendingMoviesFromAPI, netflixOriginalsMoviesFromAPI, topRatedMoviesFromAPI, actionMoviesFromAPI } from '../../services/MoviesFromAPI/MovieAPIService';
 import MovieCard from '../../components/MovieCard/MovieCard';
-import './Profile.scss';
 import UserLoginBanner from '../../components/UserLogginBanner/UserLoginBanner';
+import './Profile.scss';
 
 const Profile = () => {
   const [trendingMovies, setTrendingMovies] = useState([])
@@ -48,12 +48,11 @@ const Profile = () => {
   }
 
 
-
   return (
     <div>
       {randomMovie && <UserLoginBanner randomMovie={randomMovie} />}
 {/*       <h1>{user.name} Profile</h1> */}
-{/*       <ul>
+      <ul>
         {user.movies.map(movie => {
           return (
             <li key={movie.id} style={{marginBottom: '50px'}}>
@@ -63,7 +62,7 @@ const Profile = () => {
             </li>
           )
         })}
-      </ul> */}
+      </ul>
 
       <div className="cards">
         <h2 className="cards__title">Trending now</h2>
