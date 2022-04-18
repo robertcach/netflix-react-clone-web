@@ -1,2 +1,36 @@
 @import '/src/assets/stylesheets/general_mixins.scss';
 @import '/src/assets/stylesheets/variables.scss';
+
+
+.serie {
+
+  &__data {
+    text-align: left
+  }
+
+  &__seasons {
+    @include flex(flex, row, wrap, flex-start, center);
+    margin: 15px 0px
+  }
+
+  &__info {
+    @include flex(flex, column, wrap, flex-start, flex-start);
+    margin-top: 75px
+
+  }
+
+  &__single-info {
+    @include flex(flex, row, wrap, flex-start, center);
+    font-size: 1.6rem;
+    margin: 15px 0px;
+  }
+
+  &__info-title {
+    margin-right: 5px;
+    color: #777;
+  }
+
+  &__single-data {
+    margin-right: 5px;
+  }
+}

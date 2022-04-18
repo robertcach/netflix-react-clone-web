@@ -50,7 +50,11 @@ const Profile = () => {
 
   return (
     <div>
-      {randomMovie && <UserLoginBanner randomMovie={randomMovie} />}
+      {/* {randomMovie && <UserLoginBanner randomMovie={randomMovie} />} */}
+      {randomMovie &&
+        <UserLoginBanner title={randomMovie.title} name={randomMovie.name} overview={randomMovie.overview} image={randomMovie.backdrop_path}
+        />
+      }
 {/*       <h1>{user.name} Profile</h1> */}
 {/*       <ul>
         {user.movies.map(movie => {
