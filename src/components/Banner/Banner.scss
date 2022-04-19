@@ -6,6 +6,13 @@
   @include border();
   min-height: 500px;
 
+  @media (max-width: 768px) {
+    min-height: auto;
+    padding: 50px 0px;
+    top: -120px;
+    position: relative;
+  }
+
   &:nth-child(even) &__wrapper {
     flex-direction: row-reverse;
   }
@@ -17,19 +24,35 @@
   &__col-left {
     width: 50%;
     text-align: left;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
 
   &__title {
     font-size: 4.5rem;
     margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+      font-size: 2.6rem;
+    }
   }
 
   &__subtitle {
     font-size: 2.6rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
   }
 
   &__col-right {
     width: 50%;
+
+    @media (max-width: 768px) {
+      width: 90%;
+    }
   }
 
   &__img {

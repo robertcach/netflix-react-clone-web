@@ -24,6 +24,9 @@
 
   &__col {
 
+    @media (max-width: 768px) {
+      width: 50%;
+    }
   }
 
   &__ul{

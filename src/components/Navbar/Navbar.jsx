@@ -33,7 +33,6 @@ const Navbar = () => {
               <div className="nav__login-left">
                 <Link to="/movie/new" className="nav__text">Create Movie</Link>
                 <Link to="/series" className="nav__text">Series TV</Link>
-                <Link to="/movies" className="nav__text">Movies</Link>
               </div>
 
               <div className="nav__login-right">
