@@ -10,6 +10,11 @@
   @include less-top();
   margin-bottom: -120px;
 
+  @media (max-width: 768px) {
+    background: none;
+    height: 100vh;
+  }
+
   &__content {
     @include flex(flex, row, wrap, center, center);
     background-color: rgba(0, 0, 0, 0.7);
@@ -21,6 +26,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding: 50px 0px;
+    }
+  }
+
+  &__title {
+    @media (max-width: 768px) {
+      font-size: 3.2rem;
+    }
   }
 
   &__form {

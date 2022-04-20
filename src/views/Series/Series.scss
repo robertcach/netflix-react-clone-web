@@ -3,6 +3,11 @@
 
 .tv-cards {
 
+  &__title {
+    font-size: 3rem;
+    text-align: left
+  }
+
   &__single {
     @include flex(flex, row, wrap, space-evenly, flex-start);
   }

@@ -13,7 +13,7 @@ const Home = () => {
         <Header />
       </div>
 
-      <div>
+      <div className="banners">
         {banners.map(banner => {
           return (
             <Banner key={banner.id} {...banner} /> 

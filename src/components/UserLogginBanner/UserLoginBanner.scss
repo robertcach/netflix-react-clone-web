@@ -15,10 +15,18 @@
     width: 60%;
     padding: 0 4%;
     text-align: left;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 
   &__title {
     font-size: 7rem;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
   }
 
   &__description {

@@ -49,7 +49,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login__content">
-        <h1>Sign In</h1>
+        <h1 className="login__title">Sign In</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="login__form">
           <InputGroup 
