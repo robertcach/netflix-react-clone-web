@@ -2,16 +2,12 @@
 @import '/src/assets/stylesheets/variables.scss';
 
 .card {
-  width: 19%;
   border-radius: 4px;
   margin-right: 1%;
 
-  @media (max-width: 768px) {
-    width: 49%;
-  }
-
   &__img {
-    object-fit: contain;
-    max-height: 240px;
+    object-fit: cover;
+    height: 240px;
+    width: 160px;
   }
 }

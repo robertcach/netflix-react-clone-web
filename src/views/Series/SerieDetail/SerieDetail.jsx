@@ -36,7 +36,7 @@ const SerieDetail = () => {
         <div className="serie__banner">
           <UserLoginBanner title={serie.title} name={serie.name} overview={serie.overview} image={serie.backdrop_path} />
 
-          <div className="serie__data wrapper">
+          <div className="serie__data">
             <h2>All seasons</h2>
             <div className="serie__seasons">
               {seasons && seasons.map(({ poster_path, name }) => {

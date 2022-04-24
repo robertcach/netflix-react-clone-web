@@ -20,6 +20,12 @@
   top: -120px;
 }
 
+@mixin mobile-width {
+  width: 100%;
+  padding: 0 5%;
+}
+
+
 
 /* MIXIN BTNS */
 @mixin btn($bg-color, $color) {
@@ -58,6 +64,9 @@
   @include reset-p-m();
 }
 
+
+
+
 html {
   font-size: 62.5%;
 }
@@ -75,4 +84,8 @@ body {
 .wrapper {
   max-width: 1100px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    @include mobile-width();
+  }
 }

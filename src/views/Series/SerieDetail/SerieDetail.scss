@@ -5,12 +5,17 @@
 .serie {
 
   &__data {
-    text-align: left
+    text-align: left;
+    padding: 0 4%
   }
 
   &__seasons {
     @include flex(flex, row, wrap, flex-start, center);
-    margin: 15px 0px
+    margin: 15px 0px;
+
+    @media (max-width: 768px) {
+      justify-content: space-between;
+    }
   }
 
   &__info {

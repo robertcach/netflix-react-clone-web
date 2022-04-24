@@ -50,7 +50,6 @@ const Profile = () => {
 
   return (
     <div>
-      {/* {randomMovie && <UserLoginBanner randomMovie={randomMovie} />} */}
       {randomMovie &&
         <UserLoginBanner title={randomMovie.title} name={randomMovie.name} overview={randomMovie.overview} image={randomMovie.backdrop_path}
         />

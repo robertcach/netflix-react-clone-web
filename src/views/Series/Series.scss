@@ -2,13 +2,28 @@
 @import '/src/assets/stylesheets/variables.scss';
 
 .tv-cards {
+  width: 100%;
+  padding: 0 4%;
 
   &__title {
     font-size: 3rem;
-    text-align: left
+    text-align: left;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
   }
 
   &__single {
-    @include flex(flex, row, wrap, space-evenly, flex-start);
+    @include flex(flex, row, wrap, flex-start, flex-start);
+  }
+
+  &__poster {
+    width: 13%;
+    margin: 0.5% 0.5%;
+
+    @media (max-width: 768px) {
+      width: 49%;
+    }
   }
 }

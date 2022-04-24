@@ -23,17 +23,17 @@ function App() {
           <h1>Loading...</h1>
         ) :  ( 
           <Routes>
-          <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
 
-            <Route path="/" element={<ProtectedRoute />}>
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/series" element={<Series />} />
-              <Route path="/tv/:id" element={<SerieDetail />} />
-              <Route path="/movie/new" element={<NewMovie /> } />
-              <Route path="/movie/:id" element={<MovieDetail />} />
-              <Route path="/movie/:id/edit" element={<EditMovie />} />
-            </Route>
+              <Route path="/" element={<ProtectedRoute />}>
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/series" element={<Series />} />
+                <Route path="/tv/:id" element={<SerieDetail />} />
+                <Route path="/movie/new" element={<NewMovie /> } />
+                <Route path="/movie/:id" element={<MovieDetail />} />
+                <Route path="/movie/:id/edit" element={<EditMovie />} />
+              </Route>
           </Routes>
         )
       }

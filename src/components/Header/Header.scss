@@ -9,6 +9,13 @@
   background-position: 50% 50%;
   position: relative;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;;
+  }
+
+
   &__title {
     color: $white-color;
     font-size: 5rem;
@@ -16,7 +23,7 @@
     line-height: 1.2;
 
     @media (max-width: 768px) {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -27,7 +34,7 @@
     margin-bottom: 30px;
 
     @media (max-width: 768px) {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
   }
 
@@ -37,16 +44,16 @@
     font-weight: 500;
 
     @media (max-width: 768px) {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
     }
   }
 
   &__form {
-    width: 60%;
+    width: 50%;
     margin-top: 25px;
 
     @media (max-width: 768px) {
-        width: 90%;
+        width: 100%;
       }
   }
 }

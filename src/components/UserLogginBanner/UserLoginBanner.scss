@@ -10,10 +10,14 @@
   position: relative;
   top: -120px;
   margin-bottom: -8%;
+  padding-left: 4%;
+
+  @media (max-width: 768px) {
+    padding-right: 4%;
+  }
 
   &__info {
     width: 60%;
-    padding: 0 4%;
     text-align: left;
 
     @media (max-width: 768px) {
