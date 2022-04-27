@@ -9,7 +9,7 @@ const MovieDetail = () => {
   useEffect(() => {
     getMovie(id)
       .then(movie => setMovie(movie))
-  })
+  },[])
 
   return (
     <div>

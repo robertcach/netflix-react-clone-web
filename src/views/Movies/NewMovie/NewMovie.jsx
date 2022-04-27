@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { createMovie } from '../../../services/MovieService';
@@ -13,7 +13,8 @@ const NewMovie = () => {
   const { register, handleSubmit } = useForm();
 
 
-  const onSubmit = (data) => {
+   const onSubmit = (data) => {
+     /*
     const { title, description } = data
 
     if (!title || !description) {
@@ -27,7 +28,36 @@ const NewMovie = () => {
         .catch(err => setErrors(err?.response?.data?.errors))
         .finally(() => setIsSubmitting(false))
     }
+  } */
+
+
+  const bodyFormData = new FormData()
+
+  const { image, ...rest } = data
+
+  Object.keys(rest).forEach(key => {
+    bodyFormData.append(key, rest[key])
+  })
+
+  if (image[0]) {
+    bodyFormData.append('image', image[0])
   }
+
+  bodyFormData.append('user', user.id)
+
+  if (!rest) {
+    setErrors(true)
+  } else {
+    createMovie(bodyFormData)
+      .then((movie) => {
+        getUser()
+        navigate("/profile")
+      })
+      .catch(err => setErrors(err?.response?.data?.errors))
+      .finally(() => setIsSubmitting(false))
+  }
+}
+
 
   return (
     <div>
@@ -40,7 +70,7 @@ const NewMovie = () => {
           id="title"
           register={register}
           type="text"
-          placeholder="Título de la película"        
+          placeholder="Título de la película"  
         />
 
         <InputGroup
@@ -50,10 +80,17 @@ const NewMovie = () => {
           type="text"
           placeholder="Movie description"
         />
+
+        <InputGroup
+          label="Movie cover"
+          id="image"
+          register={register}
+          type="file"
+          placeholder="Cover"
+        />
+
          <button>Crear movie</button>
       </form>
-    
-    
     </div>
   )
 }
