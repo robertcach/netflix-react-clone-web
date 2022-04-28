@@ -3,7 +3,7 @@ import { getAccessToken, logout } from '../store/AccessTokenStore'
 
 const createHttp = (useAccessToken = false) => {
   const http = axios.create({
-    baseURL: `${process.env.REACT_APP_API_HOST_PRODUCTION}`,
+    baseURL: `${process.env.REACT_APP_API_HOST_PRODUCTION}/api`,
   })
 
   http.interceptors.request.use((request) => {
