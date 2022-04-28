@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useAuthContext } from '../../contexts/AuthContext';
 import { trendingMoviesFromAPI, netflixOriginalsMoviesFromAPI, topRatedMoviesFromAPI, actionMoviesFromAPI } from '../../services/MoviesFromAPI/MovieAPIService';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import UserLoginBanner from '../../components/UserLogginBanner/UserLoginBanner';
@@ -11,7 +10,6 @@ const Profile = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([])
   const [actionMovies, setActionMovies] = useState([])
   const [randomMovie, setRandomMovie] = useState([])
-  const { user, getUser } = useAuthContext();
 
   useEffect(() => {
     trendingMoviesFromAPI()
