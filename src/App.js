@@ -12,6 +12,7 @@ import EditMovie from './views/Movies/EditMovie/EditMovie';
 import Series from './views/Series/Series';
 import SerieDetail from './views/Series/SerieDetail/SerieDetail';
 import './App.scss';
+import MyMoviesList from './views/Movies/MyMoviesList/MyMoviesList';
 
 function App() {
   const { isAuthenticationFetched } = useAuthContext();
@@ -33,6 +34,7 @@ function App() {
                 <Route path="/movie/new" element={<NewMovie /> } />
                 <Route path="/movie/:id" element={<MovieDetail />} />
                 <Route path="/movie/:id/edit" element={<EditMovie />} />
+                <Route path="/my-movies" element={<MyMoviesList />} />
               </Route>
           </Routes>
         )

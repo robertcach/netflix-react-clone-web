@@ -1,0 +1,37 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.my-movie {
+  @include flex(flex, row, wrap, center, center);
+  text-align: left;
+  border: solid 1px $white-color;
+  padding: 0 50px;
+  margin-top: 15px !important;
+
+  &__title {
+    width: 10%;
+  }
+
+  &__description {
+    width: 40%;
+  }
+
+  &__cover {
+    width: 30%;
+    text-align: center;
+  }
+
+  &__image {
+    height: 150px;
+    width: auto;
+  }
+
+  &__btns {
+    @include flex(flex, row, wrap, space-evenly, center);
+    width: 20%;
+  }
+
+  &__delete {
+
+  }
+}

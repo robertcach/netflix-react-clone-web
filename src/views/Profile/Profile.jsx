@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
-import { deleteMovie } from '../../services/MovieService';
 import { trendingMoviesFromAPI, netflixOriginalsMoviesFromAPI, topRatedMoviesFromAPI, actionMoviesFromAPI } from '../../services/MoviesFromAPI/MovieAPIService';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import UserLoginBanner from '../../components/UserLogginBanner/UserLoginBanner';
@@ -40,13 +38,6 @@ const Profile = () => {
     setRandomMovie(randomMovieToBanner)
   },[trendingMovies])
 
-  const handleDelete = (id) => {
-    deleteMovie(id)
-      .then(() => {
-        getUser();
-      })
-  }
-
 
   return (
     <div>
@@ -54,18 +45,6 @@ const Profile = () => {
         <UserLoginBanner title={randomMovie.title} name={randomMovie.name} overview={randomMovie.overview} image={randomMovie.backdrop_path}
         />
       }
-{/*       <h1>{user.name} Profile</h1> */}
-      <ul>
-        {user.movies.map(movie => {
-          return (
-            <li key={movie.id} style={{marginBottom: '50px'}}>
-              <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
-              <p>{movie.description}</p>
-              <button onClick={() => handleDelete(movie.id)}>Delete movie</button>
-            </li>
-          )
-        })}
-      </ul>
 
       <div className="cards">
         <h2 className="cards__title">Trending now</h2>

@@ -51,7 +51,7 @@ const NewMovie = () => {
     createMovie(bodyFormData)
       .then((movie) => {
         getUser()
-        navigate("/profile")
+        navigate("/my-movies")
       })
       .catch(err => setErrors(err?.response?.data?.errors))
       .finally(() => setIsSubmitting(false))

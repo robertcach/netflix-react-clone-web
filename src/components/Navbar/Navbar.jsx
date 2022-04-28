@@ -33,11 +33,10 @@ const Navbar = () => {
               <div className="nav__login-left">
                 <Link to="/movie/new" className="nav__text">Create Movie</Link>
                 <Link to="/series" className="nav__text">Series TV</Link>
+                <Link to="/my-movies" className="nav__text">My movies</Link>
               </div>
 
-              <div className="nav__login-right">
-                {/* <Link to="/profile" className="nav__text">Perfil</Link> */}
-                {/* <Link to="/favourites" className="nav__text">Favourites</Link> */}
+              <div className="nav__login-right">     
                 <button onClick={logout} className="nav__logout">Logout</button>
               </div>
               
