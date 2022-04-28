@@ -51,6 +51,7 @@
 
 
   &__last{
+    @include flex(flex, row, wrap, space-between, center);
     width: 85%;
     padding-top: 30px;
     margin: 0 auto;
@@ -65,5 +66,16 @@
     color: #757575;
     font-size: 1.3rem;
     padding: 7px;
+  }
+
+  &__dev {
+    color: #757575;
+    font-size: 1.3rem;
+    padding: 7px;
+  }
+
+  &__github {
+    color: $white-color;
+    text-decoration: none;
   }
 }

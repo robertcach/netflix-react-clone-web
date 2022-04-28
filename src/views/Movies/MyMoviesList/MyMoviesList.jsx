@@ -1,5 +1,6 @@
 import { useAuthContext } from '../../../contexts/AuthContext';
 import { deleteMovie } from '../../../services/MovieService';
+import { Link } from 'react-router-dom';
 import './MyMoviesList.scss'
 
 const MyMoviesList = () => {
@@ -27,7 +28,7 @@ const MyMoviesList = () => {
         { user && user.movies.map(movie => {
           return (
             <div key={movie.id} className='my-movie wrapper'>
-              <h4 className='my-movie__title'>{movie.title}</h4>
+              <h3 className='my-movie__title'>{movie.title}</h3>
               <p className='my-movie__description'>{movie.description}</p>
 
               <div className='my-movie__cover'>
@@ -35,7 +36,7 @@ const MyMoviesList = () => {
               </div>
 
               <div className='my-movie__btns'>
-                <button>Edit your movie</button>
+                <Link to={`/movie/${movie.id}/edit`} className='my-movie__edit'>Edit your movie</Link>
                 <button onClick={() => handleDelete(movie.id)} className='my-movie__delete'>Delete movie</button>
               </div>
             </div>

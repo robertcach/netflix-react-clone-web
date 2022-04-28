@@ -31,8 +31,8 @@ const Navbar = () => {
           ) : (
             <div className="nav__menu">
               <div className="nav__login-left">
-                <Link to="/movie/new" className="nav__text">Create Movie</Link>
                 <Link to="/series" className="nav__text">Series TV</Link>
+                <Link to="/movie/new" className="nav__text">Create Movie</Link>
                 <Link to="/my-movies" className="nav__text">My movies</Link>
               </div>
 

@@ -1,0 +1,8 @@
+@import '/src/assets/stylesheets/general_mixins.scss';
+@import '/src/assets/stylesheets/variables.scss';
+
+.new-movie {
+  &__btn {
+    @include btn($primary-color, $white-color)
+  }
+}

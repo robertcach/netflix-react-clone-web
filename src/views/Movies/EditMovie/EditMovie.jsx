@@ -20,28 +20,42 @@ const EditMovie = () => {
     getMovie(id)
       .then(movie => {
         setMovie(movie)
-        reset({ title: movie.title, description: movie.description })
+        reset({ title: movie.title, description: movie.description, image: movie.image })
       })
-  }, [])
+  },[id, reset])
 
   const onSubmit = (data) => {
-    const { title, description } = data
+    const bodyFormData = new FormData()
+
+    const { image, ...rest } = data
     
-    if (!title || !description) {
+    Object.keys(rest).forEach(key => {
+      bodyFormData.append(key, rest[key])
+    })
+
+
+    if(image === movie.image) {
+      bodyFormData.append('image', image)
+    } else {
+      bodyFormData.append('image', image[0])
+    }
+
+    if (!rest) {
+      console.log('falta info para actualizar')
       setErrors(true)
     } else {
-      updateMovie(movie.id, data)
+      updateMovie(movie.id, bodyFormData)
         .then((movie) => {
           getUser()
-          navigate("/profile")
+          navigate('/my-movies')
         })
         .catch(err => setErrors(err?.response?.data?.errors))
-        .finally(() => setIsSubmitting(false))
+        .finally(() => setIsSubmitting(true))
     }
   }
 
   return (
-    <div>
+    <div className="wrapper">
       <h1>Edit your movie:</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -63,6 +77,16 @@ const EditMovie = () => {
             id="description"
             register={register}
             type="text"
+          />
+        </div>
+
+        <div>
+          <InputGroup
+            label="Movie cover"
+            id="image"
+            register={register}
+            type="file"
+            placeholder="Cover"
           />
         </div>
         <button>Edit movie</button>

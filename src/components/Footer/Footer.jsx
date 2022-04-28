@@ -48,6 +48,9 @@ const Footer = () => {
 
       <div className="footer__last">
         <p className="footer__country">Netflix Spain</p>
+        <p className="footer__dev">Made by 
+          <a href="https://github.com/robertcach" className="footer__github" target="_blank" rel="noreferrer"> Robert Cabrera</a>
+        </p>
       </div>
     
     </div>

@@ -32,8 +32,8 @@ function App() {
                 <Route path="/series" element={<Series />} />
                 <Route path="/tv/:id" element={<SerieDetail />} />
                 <Route path="/movie/new" element={<NewMovie /> } />
-                <Route path="/movie/:id" element={<MovieDetail />} />
                 <Route path="/movie/:id/edit" element={<EditMovie />} />
+                <Route path="/movie/:id" element={<MovieDetail />} />
                 <Route path="/my-movies" element={<MyMoviesList />} />
               </Route>
           </Routes>

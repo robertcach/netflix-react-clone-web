@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { createMovie } from '../../../services/MovieService';
 import { useAuthContext } from '../../../contexts/AuthContext';
 import InputGroup from '../../../components/InputGroup/InputGroup';
+import './NewMovie.scss'
 
 const NewMovie = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,23 +15,6 @@ const NewMovie = () => {
 
 
    const onSubmit = (data) => {
-     /*
-    const { title, description } = data
-
-    if (!title || !description) {
-      setErrors(true)
-    } else {
-      createMovie({...data, user})
-        .then((movie) => {
-          getUser()
-          navigate("/profile")
-        })
-        .catch(err => setErrors(err?.response?.data?.errors))
-        .finally(() => setIsSubmitting(false))
-    }
-  } */
-
-
   const bodyFormData = new FormData()
 
   const { image, ...rest } = data
@@ -60,7 +44,7 @@ const NewMovie = () => {
 
 
   return (
-    <div>
+    <div className='new-movie wrapper'>
       <h1>Create your movie</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -89,7 +73,7 @@ const NewMovie = () => {
           placeholder="Cover"
         />
 
-         <button>Crear movie</button>
+         <button className='new-movie__btn'>Crear movie</button>
       </form>
     </div>
   )
