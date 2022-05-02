@@ -22,7 +22,7 @@ function App() {
       <Navbar />
       { !isAuthenticationFetched ? (
           <h1>Loading...</h1>
-        ) :  ( 
+        ) : ( 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
