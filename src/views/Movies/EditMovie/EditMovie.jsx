@@ -55,7 +55,7 @@ const EditMovie = () => {
   }
 
   return (
-    <div className="wrapper">
+    <div className="wrapper edit-movie">
       <h1>Edit your movie:</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -89,7 +89,7 @@ const EditMovie = () => {
             placeholder="Cover"
           />
         </div>
-        <button>Edit movie</button>
+        <button className="edit-movie__btn">Edit movie</button>
       </form>
       
     </div>
