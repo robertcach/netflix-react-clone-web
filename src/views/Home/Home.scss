@@ -15,6 +15,11 @@
 .faqs {
   padding: 75px 0px;
   border-bottom: solid 8px $grey-color;
+  
+    @media (max-width: 768px) {
+        top: -120px;
+      position: relative
+      }
 
   &__title {
     font-size: 5rem;
