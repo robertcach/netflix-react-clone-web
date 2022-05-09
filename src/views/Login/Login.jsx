@@ -70,7 +70,7 @@ const Login = () => {
             placeholder="Password"
           />
 
-          <button className="register-form__button">Sign In
+          <button className="register-form__button">{isSubmitting ? 'Login...' : 'Sign In'}
             <i className="fa fa-arrow-right register-form__icon" aria-hidden="true"></i>
           </button>
         </form>
