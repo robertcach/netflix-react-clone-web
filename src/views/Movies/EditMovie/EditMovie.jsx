@@ -4,7 +4,7 @@ import { useAuthContext } from "../../../contexts/AuthContext";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
-
+import "./EditMovie.scss"
 
 
 const EditMovie = () => {
