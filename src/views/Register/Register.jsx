@@ -80,7 +80,7 @@ const Register = () => {
 
         </div>
 
-        <button className="register-form__button">Get Started
+        <button className="register-form__button">{isSubmitting ? 'Submiting...' : 'Get Started'}
           <i className="fa fa-arrow-right register-form__icon" aria-hidden="true"></i>
         </button>
       </form>
